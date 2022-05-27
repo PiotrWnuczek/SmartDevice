@@ -5,13 +5,13 @@ import 'firebase/compat/auth';
 import 'firebase/compat/storage';
 
 firebase.initializeApp({
-  apiKey: 'AIzaSyBWoaYe1AficVcccqkh56NF-GIuAhGAN6w',
-  authDomain: 'internetthings-app.firebaseapp.com',
-  projectId: 'internetthings-app',
-  storageBucket: 'internetthings-app.appspot.com',
-  messagingSenderId: '251479348839',
-  appId: '1:251479348839:web:704626ec3de663801fa6c2',
-  measurementId: 'G-WQ3KDG28V3',
+  apiKey: 'AIzaSyB6nGzMCcBvrBNppM3uWKIVAjg2RwnFudc',
+  authDomain: 'smartdevice-app.firebaseapp.com',
+  projectId: 'smartdevice-app',
+  storageBucket: 'smartdevice-app.appspot.com',
+  messagingSenderId: '652787505319',
+  appId: '1:652787505319:web:b423e9a77a6f3e3b812382',
+  measurementId: 'G-E6KRLFMXMM',
 });
 
 firebase.analytics();
