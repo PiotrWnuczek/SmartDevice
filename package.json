@@ -1,6 +1,6 @@
 {
-  "name": "internet-things",
-  "homepage": "https://piotrwnuczek.github.io/InternetThings",
+  "name": "smart-device",
+  "homepage": "https://educationcodes.github.io/smartdevice",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -1,6 +1,6 @@
 {
-  "short_name": "IoT App",
-  "name": "Internet of Things App",
+  "short_name": "SmartDevice",
+  "name": "Smart Device Admin App",
   "icons": [
     {
       "src": "favicon.ico",
@@ -13,7 +13,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "https://piotrwnuczek.github.io/InternetThings",
+  "start_url": "https://educationcodes.github.io/smartdevice",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
