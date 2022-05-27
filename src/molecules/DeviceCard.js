@@ -3,8 +3,9 @@ import { IconButton, Typography } from '@mui/material';
 import { Card, CardHeader, CardContent, Avatar } from '@mui/material';
 import { FolderOpen, Input } from '@mui/icons-material';
 
-const DeviceCard = ({ device }) => (
+const DeviceCard = ({ device, stamps, level }) => (
   <Card variant='outlined'>
+    {console.log(Object.values(stamps))}
     <CardHeader
       title='DeviceName'
       avatar={
@@ -22,7 +23,8 @@ const DeviceCard = ({ device }) => (
     />
     <CardContent>
       <Typography>
-        DeviceDescription
+        {device.name} | {device.description} <br />
+        {stamps && Object.values(stamps)} | {level}
       </Typography>
     </CardContent>
   </Card>

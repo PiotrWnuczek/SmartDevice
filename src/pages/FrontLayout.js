@@ -23,7 +23,7 @@ const FrontLayout = ({ children }) => (
         {children}
       </Card>
       <Typography mt={2}>
-        Copyright © projectextend.com
+        Copyright © SmartDevice
       </Typography>
     </Container>
   </StyledWrapper>
