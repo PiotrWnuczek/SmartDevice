@@ -1,11 +1,13 @@
 import React from 'react';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
+import { firebaseConnect } from 'react-redux-firebase';
 import { IconButton, Typography } from '@mui/material';
 import { Card, CardHeader, CardContent, Avatar } from '@mui/material';
 import { FolderOpen, Input } from '@mui/icons-material';
 
-const DeviceCard = ({ device, stamps, level }) => (
+const DeviceCard = ({ device, controller }) => (
   <Card variant='outlined'>
-    {console.log(Object.values(stamps))}
     <CardHeader
       title='DeviceName'
       avatar={
@@ -23,11 +25,18 @@ const DeviceCard = ({ device, stamps, level }) => (
     />
     <CardContent>
       <Typography>
-        {device.name} | {device.description} <br />
-        {stamps && Object.values(stamps)} | {level}
+        {device.name} | {device.key} | {device.description} <br />
+        {controller && Object.values(controller.stamps)} | {controller && controller.level}
       </Typography>
     </CardContent>
   </Card>
 );
 
-export default DeviceCard;
+const mapStateToProps = (state, props) => ({
+  controller: state.firebase.data[props.device.key],
+});
+
+export default compose(
+  connect(mapStateToProps),
+  firebaseConnect(props => [props.device.key]),
+)(DeviceCard);
