@@ -1,6 +1,6 @@
-# InternetOfThings
+# SmartDevice
 
-## Internet of things progressive web application
+## Smart Device Admin Application
 
 ### Technologies:
 
