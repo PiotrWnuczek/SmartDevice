@@ -2,32 +2,34 @@ import React from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { firebaseConnect } from 'react-redux-firebase';
-import { IconButton, Typography } from '@mui/material';
-import { Card, CardHeader, CardContent, Avatar } from '@mui/material';
-import { FolderOpen, Input } from '@mui/icons-material';
+import { Typography, LinearProgress, Avatar } from '@mui/material';
+import { Card, CardHeader, CardContent } from '@mui/material';
+import { FolderOpen } from '@mui/icons-material';
+import DeviceChart from 'atoms/DeviceChart';
 
 const DeviceCard = ({ device, controller }) => (
-  <Card variant='outlined'>
+  <Card
+    sx={{ borderRadius: 2 }}
+    variant='outlined'
+  >
     <CardHeader
-      title='DeviceName'
-      avatar={
-        <Avatar>
-          <FolderOpen />
-        </Avatar>
-      }
-      action={
-        <IconButton
-          onClick={() => console.log('click')}
-        >
-          <Input />
-        </IconButton>
-      }
+      title={'Name: ' + device.name + ' | Key: ' + device.key}
+      subheader={'Description: ' + device.description}
+      avatar={<Avatar>
+        <FolderOpen />
+      </Avatar>}
     />
     <CardContent>
-      <Typography>
-        {device.name} | {device.key} | {device.description} <br />
-        {controller && Object.values(controller.stamps)} | {controller && controller.level}
-      </Typography>
+      <Typography>Activations Chart:</Typography>
+      {controller && <DeviceChart
+        stamps={Object.values(controller.stamps)}
+      />}
+      <Typography>Liquid Level:</Typography>
+      {controller && <LinearProgress
+        sx={{ mt: 2, height: 5, borderRadius: 5 }}
+        variant='determinate'
+        value={controller.level}
+      />}
     </CardContent>
   </Card>
 );
