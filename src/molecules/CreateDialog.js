@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { createDevice } from 'store/devicesActions';
 import { Formik } from 'formik';
-import { Box, Dialog, Button, Avatar } from '@mui/material';
+import { Box, Dialog, Button, Avatar, Typography } from '@mui/material';
 import { ListItem, ListItemAvatar, ListItemText } from '@mui/material';
-import { DialogTitle, DialogActions, DialogContent } from '@mui/material';
 import { AddCircle } from '@mui/icons-material';
 import TextInput from 'atoms/TextInput';
 
@@ -26,8 +25,13 @@ const CreateDialog = ({ createDevice }) => {
         <ListItemText secondary='Add' />
       </ListItem>
       <Dialog open={open} onClose={() => setOpen(false)}>
-        <DialogTitle>Add New Device</DialogTitle>
-        <DialogContent>
+        <Box sx={{ p: 2 }}>
+          <Typography
+            sx={{ mb: 2 }}
+            variant='h6'
+          >
+            Add New Device
+          </Typography>
           <Formik
             initialValues={{
               key: '',
@@ -46,6 +50,7 @@ const CreateDialog = ({ createDevice }) => {
                   label='Key'
                   name='key'
                   type='text'
+                  size='small'
                   autoFocus
                   required
                 />
@@ -55,6 +60,7 @@ const CreateDialog = ({ createDevice }) => {
                   label='Name'
                   name='name'
                   type='text'
+                  size='small'
                   required
                 />
                 <TextInput
@@ -63,26 +69,30 @@ const CreateDialog = ({ createDevice }) => {
                   label='Description'
                   name='description'
                   type='text'
+                  size='small'
+                  rows={2}
+                  multiline
                 />
               </form>
             )}
           </Formik>
-        </DialogContent>
-        <DialogActions>
           <Button
-            variant='outlined'
-            onClick={() => setOpen(false)}
-          >
-            Cancel
-          </Button>
-          <Button
-            variant='outlined'
+            sx={{ mr: 1 }}
             type='submit'
+            variant='outlined'
             form='create'
+            size='small'
           >
             Add Device
           </Button>
-        </DialogActions>
+          <Button
+            onClick={() => setOpen(false)}
+            variant='outlined'
+            size='small'
+          >
+            Cancel
+          </Button>
+        </Box>
       </Dialog>
     </Box>
   )
