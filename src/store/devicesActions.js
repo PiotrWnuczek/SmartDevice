@@ -31,3 +31,23 @@ export const removeDevice = (id) => (dispatch, gs, { getFirestore }) => {
     dispatch({ type: 'REMOVEDEVICE_SUCCESS', err });
   })
 };
+
+export const removeData = (key) => (dispatch, gs, { getFirebase }) => {
+  const firebase = getFirebase();
+  const ref = firebase.ref(key);
+  ref.remove().then(() => {
+    dispatch({ type: 'REMOVEDATA_SUCCESS', key });
+  }).catch((err) => {
+    dispatch({ type: 'REMOVEDATA_SUCCESS', err });
+  })
+};
+
+export const resetData = (key) => (dispatch, gs, { getFirebase }) => {
+  const firebase = getFirebase();
+  const ref = firebase.ref(key + '/stamps');
+  ref.remove().then(() => {
+    dispatch({ type: 'RESETDATA_SUCCESS', key });
+  }).catch((err) => {
+    dispatch({ type: 'RESETDATA_SUCCESS', err });
+  })
+};

@@ -22,7 +22,7 @@ const DeviceChart = ({ stamps }) => {
       <ResponsiveContainer>
         <LineChart
           data={data}
-          margin={{ top: 10, right: 30, bottom: 10, left: -30 }}
+          margin={{ top: 10, right: 20, bottom: 10, left: -20 }}
         >
           <XAxis
             dataKey='time'

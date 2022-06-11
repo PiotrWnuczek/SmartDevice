@@ -40,6 +40,7 @@ const CreateDialog = ({ createDevice }) => {
             }}
             onSubmit={(values) => {
               createDevice(values);
+              setOpen(false);
             }}
           >
             {({ values, handleChange, handleSubmit }) => (

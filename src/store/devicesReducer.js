@@ -22,6 +22,18 @@ const devicesReducer = (state = initial, action) => {
     case 'REMOVEDEVICE_ERROR':
       console.log(action.err);
       return state;
+    case 'REMOVEDATA_SUCCESS':
+      console.log(action.key);
+      return state;
+    case 'REMOVEDATA_ERROR':
+      console.log(action.err);
+      return state;
+    case 'RESETDATA_SUCCESS':
+      console.log(action.key);
+      return state;
+    case 'RESETDATA_ERROR':
+      console.log(action.err);
+      return state;
     default: return state;
   }
 };
