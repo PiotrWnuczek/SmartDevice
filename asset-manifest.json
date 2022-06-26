@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/SmartDevice/static/css/main.253b4334.css",
+    "main.js": "/SmartDevice/static/js/main.fa207701.js",
+    "service-worker.js": "/SmartDevice/service-worker.js",
+    "index.html": "/SmartDevice/index.html",
+    "main.253b4334.css.map": "/SmartDevice/static/css/main.253b4334.css.map",
+    "main.fa207701.js.map": "/SmartDevice/static/js/main.fa207701.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.253b4334.css",
+    "static/js/main.fa207701.js"
+  ]
+}
