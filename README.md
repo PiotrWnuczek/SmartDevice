@@ -1,9 +1,10 @@
-# SmartDevice
+# Smart Device Admin App
 
-## Smart Device Admin Application
+### Internet of Things device management application. The frontend programmed in React connects to the Arduino using Firebase. Data from Arduino is visualized in a graph.
 
-### Technologies:
-
-- Language: JavaScript
-- Frameworks: React, Redux, MaterialUI
-- Services: FireBase, aRest, Arduino
+### Tech Stack:
+- JavaScript
+- React
+- Firebase
+- MaterialUI
+- Arduino
